@@ -11,7 +11,7 @@ class Chat extends Model
 
     public function users(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->belongsToMany(User::class, 'chart_users');
+        return $this->belongsToMany(User::class, 'chat_users');
     }
 
     public function messages(): \Illuminate\Database\Eloquent\Relations\HasMany
