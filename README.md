@@ -22,9 +22,17 @@ EL autor del tutorial es [Laravelers](https://laravelers.com/) con redes sociale
 ####Iniciar
 
 1. Clonar el repositorio
-
 2. Instalar composer
 3. Instalar librerías npm
 4. crear y configurar archivo .env
 5. generar una clave
 6. Ejecutar migración
+
+
+####Comandos
+
+1. Iniciar serve `php artisan serve`
+2. Iniciar vite `npm run dev`
+3. Iniciar el socket `php artisan websockets:serve`
+
+
