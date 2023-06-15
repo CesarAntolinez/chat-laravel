@@ -2,11 +2,8 @@ const msgerForm = get(".msger-inputarea");
 const msgerInput = get(".msger-input");
 const msgerChat = get(".msger-chat");
 
-const PERSON_IMG = "https://image.flaticon.com/icons/svg/145/145867.svg";
 
-const chatWith = get(".chatWith");
 const chatStatus = get(".chatStatus");
-const typing = get(".typing");
 
 msgerForm.addEventListener("submit", event => {
 
