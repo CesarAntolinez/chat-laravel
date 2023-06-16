@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class ChatController extends Controller
 {
 
-    public function chat_with(User $user)
+    public function chat_with(User $user): \Illuminate\Http\RedirectResponse
     {
         $chat = auth()->user()
             ->chats()

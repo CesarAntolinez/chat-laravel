@@ -2,8 +2,11 @@ const msgerForm = get(".msger-inputarea");
 const msgerInput = get(".msger-input");
 const msgerChat = get(".msger-chat");
 
+const PERSON_IMAGE = 'https://image.flaticon.com/icons/svg/145/145867.svg';
 
-const chatStatus = get(".chatStatus");
+const chatWith = get('.chatWith');
+const typing = get('.typing');
+const chatStatus = get('.chatStatus');
 
 msgerForm.addEventListener("submit", event => {
 
@@ -16,7 +19,6 @@ msgerForm.addEventListener("submit", event => {
     // Aquí vamos a colocar código más adelante
 
     msgerInput.value = "";
-
 });
 
 function appendMessage(name, img, side, text, date) {
