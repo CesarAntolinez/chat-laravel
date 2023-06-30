@@ -2,23 +2,52 @@ const msgerForm = get(".msger-inputarea");
 const msgerInput = get(".msger-input");
 const msgerChat = get(".msger-chat");
 
-const PERSON_IMAGE = 'https://image.flaticon.com/icons/svg/145/145867.svg';
+const PERSON_IMAGE = '/img/avatar/hombre.png';
 
 const chatWith = get('.chatWith');
 const typing = get('.typing');
 const chatStatus = get('.chatStatus');
 
-msgerForm.addEventListener("submit", event => {
-
-    event.preventDefault();
-
+function send_message() {
     const msgText = msgerInput.value;
 
     if (!msgText) return;
 
+    console.log(msgText)
     // Aquí vamos a colocar código más adelante
 
+    axios.post('/message/send', {
+        message: msgText,
+        chat: 2,
+    }).then(response => {
+
+        let data = response.data
+
+        appendMessage(
+            data.user.name,
+            PERSON_IMAGE,
+            'right',
+            data.content,
+            formatDate(new Date(data.created_at))
+        )
+
+        console.log(response)
+
+    }).catch(error => {
+
+        console.log('error')
+        console.error(error)
+
+    })
+
     msgerInput.value = "";
+}
+
+document.querySelector('#form-send').addEventListener("submit", event => {
+
+    event.preventDefault();
+
+    send_message()
 });
 
 function appendMessage(name, img, side, text, date) {

@@ -1,9 +1,12 @@
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/chat.css') }}">
 @endpush
+@push('scripts')
+    <script src="{{ asset('js/chat.js') }}"></script>
+@endpush
 
 <x-app-layout>
-    <div style="height: 70vh">
+    <div style="height: 70vh" x-data="{}">
         <section class="msger mx-auto">
             <div class="msger-header">
                 <div class="msger-header-title">
@@ -20,15 +23,11 @@
 
             </div>
 
-            <form class="msger-inputarea">
-                <input type="text" class="msger-input" oninput="sendTypingEvent()" placeholder="Enter your message...">
+            <form class="msger-inputarea" id="form-send" @submit.prevent="send_message">
+                <input type="text" class="msger-input" placeholder="Enter your message...">
                 <button type="submit" class="msger-send-btn">Send</button>
             </form>
 
         </section>
     </div>
 </x-app-layout>
-
-@push('scripts')
-    <script src="{{ asset('js/chat.js') }}"></script>
-@endpush
